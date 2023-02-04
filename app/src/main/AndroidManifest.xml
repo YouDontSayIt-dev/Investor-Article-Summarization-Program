@@ -12,9 +12,12 @@
         android:theme="@style/Theme.App"
         tools:targetApi="31">
         <activity
+            android:name=".signup"
+            android:exported="false" />
+        <activity
             android:name=".welcomeScreen"
             android:exported="false"
-            android:label="WelcomeScreen"/>
+            android:label="WelcomeScreen" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

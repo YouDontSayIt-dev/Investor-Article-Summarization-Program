@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup"
+    android:background="@drawable/signup">
+
+    <ImageView
+        android:id="@+id/logo2"
+        android:layout_width="158sp"
+        android:layout_height="158sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="110dp"
+        app:srcCompat="@drawable/blue" />
+
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="274sp"
+        android:layout_height="48sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:background="@drawable/rounded_corner_1"
+        android:fontFamily="@font/lato"
+        android:text="Username"
+        android:textAlignment="center"
+        android:textColor="@color/button_text"
+        android:textSize="20dp"
+        android:alpha="0.4"/>
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="274sp"
+        android:layout_height="48sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/rounded_corner_1"
+        android:fontFamily="@font/lato"
+        android:text="Email"
+        android:textAlignment="center"
+        android:textColor="@color/button_text"
+        android:textSize="20dp"
+        android:alpha="0.4"/>
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="274sp"
+        android:layout_height="48sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:background="@drawable/rounded_corner_1"
+        android:fontFamily="@font/lato"
+        android:text="Password"
+        android:textAlignment="center"
+        android:textColor="@color/button_text"
+        android:textSize="20dp"
+        android:alpha="0.4"/>
+
+    <EditText
+        android:id="@+id/confirmpasswordInput"
+        android:layout_width="274sp"
+        android:layout_height="48sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:background="@drawable/rounded_corner_1"
+        android:fontFamily="@font/lato"
+        android:text="Confirm Password"
+        android:textAlignment="center"
+        android:textColor="@color/button_text"
+        android:textSize="20dp"
+        android:alpha="0.4"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="80dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/lato"
+        android:textSize="12dp"
+        android:text="By clicking on sign-up, you have agreed on the Terms and Conditions of Use" />
+
+    <Button
+        android:id="@+id/btn_signin"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="503dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/rounded_corner_2"
+        android:fontFamily="@font/lato"
+        android:text="Sign up"
+        android:textColor="@color/button_text"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="558dp"
+        android:layout_marginEnd="80dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/lato"
+        android:textSize="12dp"
+        android:text="Already have an account? Log In" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="590dp"
+        android:layout_marginEnd="221dp"
+        android:background="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="583dp"
+        android:layout_marginEnd="80dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/lato"
+        android:textSize="12dp"
+        android:text="OR" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="221dp"
+        android:layout_marginTop="590dp"
+        android:layout_marginEnd="58dp"
+        android:background="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="80dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/lato"
+        android:textSize="12dp"
+        android:text="SIGN IN WITH" />
+
+    <ImageView
+        android:id="@+id/reddit"
+        android:layout_width="26sp"
+        android:layout_height="26sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginBottom="35dp"
+        app:srcCompat="@drawable/reddit" />
+
+    <ImageView
+        android:id="@+id/google"
+        android:layout_width="26sp"
+        android:layout_height="26sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="194dp"
+        android:layout_marginBottom="35dp"
+        app:srcCompat="@drawable/google" />
+
+    <ImageView
+        android:id="@+id/facebook"
+        android:layout_width="26sp"
+        android:layout_height="26sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="35dp"
+        app:srcCompat="@drawable/facebook" />
+
+</RelativeLayout>
