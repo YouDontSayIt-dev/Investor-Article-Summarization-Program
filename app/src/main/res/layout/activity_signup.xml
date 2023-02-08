@@ -72,7 +72,7 @@
         android:ems="10"
         android:inputType="text"
         android:background="@drawable/rounded_corner_1"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:text="Password"
         android:textAlignment="center"
         android:textColor="@color/button_text"
@@ -92,7 +92,7 @@
         android:ems="10"
         android:inputType="text"
         android:background="@drawable/rounded_corner_1"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:text="Confirm Password"
         android:textAlignment="center"
         android:textColor="@color/button_text"
@@ -100,7 +100,7 @@
         android:alpha="0.4"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/terms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -110,7 +110,7 @@
         android:layout_marginTop="460dp"
         android:layout_marginEnd="80dp"
         android:textAlignment="center"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:textSize="12dp"
         android:text="By clicking on sign-up, you have agreed on the Terms and Conditions of Use" />
 
@@ -126,13 +126,13 @@
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="180dp"
         android:background="@drawable/rounded_corner_2"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:text="Sign up"
         android:textColor="@color/button_text"
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -142,7 +142,7 @@
         android:layout_marginTop="558dp"
         android:layout_marginEnd="80dp"
         android:textAlignment="center"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:textSize="12dp"
         android:text="Already have an account? Log In" />
 
@@ -159,7 +159,7 @@
         />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -169,7 +169,7 @@
         android:layout_marginTop="583dp"
         android:layout_marginEnd="80dp"
         android:textAlignment="center"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:textSize="12dp"
         android:text="OR" />
 
@@ -196,8 +196,8 @@
         android:layout_marginTop="620dp"
         android:layout_marginEnd="80dp"
         android:textAlignment="center"
-        android:fontFamily="@font/lato"
-        android:textSize="12dp"
+        android:fontFamily="@font/lato_regular"
+        android:textSize="15dp"
         android:text="SIGN IN WITH" />
 
     <ImageView
