@@ -3,6 +3,7 @@ package com.example.app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -22,6 +23,13 @@ public class signup extends AppCompatActivity {
         confirm = (EditText) findViewById(R.id.confirmpasswordInput);
 
         signup = (Button) findViewById(R.id.btn_signin);
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 }
