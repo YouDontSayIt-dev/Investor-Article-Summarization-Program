@@ -9,7 +9,10 @@ import android.os.Handler;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.sql.Time;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
+
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.pipeline.*;
@@ -17,11 +20,15 @@ import edu.stanford.nlp.sentiment.*;
 import edu.stanford.nlp.util.CoreMap;
 
 
-public class loadingScan extends AppCompatActivity {
 
+
+public class loadingScan extends AppCompatActivity {
+    long start = System.nanoTime();
     private int posCount = 0, negCount = 0, posTotal = 0, negTotal = 0;
-    private String articleName, articleText, posPercent, negPercent, feedback;
+    private String articleName, articleText, posPercent, negPercent, feedback, timeTotal;
     private Handler handler = new Handler();
+
+
 
     DatabaseReference spid;
     Articles article;
@@ -73,12 +80,18 @@ public class loadingScan extends AppCompatActivity {
             System.out.println("Overall Positive");
             feedback = "Overall Positive";
         }
-
+        long end = System.nanoTime();
+        long elapsedTime = end - start;
+        int secondsConvert = 1_000_000_000;
+        double elapsedTimeinSecond = (double) elapsedTime / secondsConvert;
+        long convert = TimeUnit.SECONDS.convert(elapsedTime, TimeUnit.NANOSECONDS);
         posTotal = (posCount / (posCount + negCount)) * 100;
         negTotal = (negCount / (posCount + negCount)) * 100;
 
+        timeTotal =  Float.toString(convert);
         posPercent = Integer.toString(posTotal);
         negPercent = Integer.toString(negTotal);
+
 
         article = new Articles();
         spid = FirebaseDatabase.getInstance().getReference().child("Articles");
@@ -86,23 +99,18 @@ public class loadingScan extends AppCompatActivity {
         article.setPosPercent(posPercent);
         article.setNegPercent(negPercent);
         article.setFeedback(feedback);
+        article.setTime(timeTotal);
         spid.push().setValue(article);
 
-
-        handler.postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
                 Intent i = new Intent(loadingScan.this, result.class);
                 i.putExtra("article_Name", articleName);
                 i.putExtra("art_Text", articleText);
                 i.putExtra("pos_Percent", posPercent);
                 i.putExtra("neg_Percent", negPercent);
                 i.putExtra("feedback", feedback);
+                i.putExtra("time_total",timeTotal);
                 startActivity(i);
                 finish();
-            }
-        }, 5000);
 
     }
 }
