@@ -12,6 +12,12 @@
         android:theme="@style/Theme.App"
         tools:targetApi="31">
         <activity
+            android:name=".result"
+            android:exported="false" />
+        <activity
+            android:name=".loadingScan"
+            android:exported="false" />
+        <activity
             android:name=".addArticle"
             android:exported="false" />
         <activity
