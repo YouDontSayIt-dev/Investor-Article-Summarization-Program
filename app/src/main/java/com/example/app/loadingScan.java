@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.*;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
@@ -13,11 +16,15 @@ import edu.stanford.nlp.pipeline.*;
 import edu.stanford.nlp.sentiment.*;
 import edu.stanford.nlp.util.CoreMap;
 
+
 public class loadingScan extends AppCompatActivity {
 
     private int posCount = 0, negCount = 0, posTotal = 0, negTotal = 0;
     private String articleName, articleText, posPercent, negPercent, feedback;
     private Handler handler = new Handler();
+
+    DatabaseReference spid;
+    Articles article;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,15 +62,15 @@ public class loadingScan extends AppCompatActivity {
             }
         }
 
-//        System.out.println(""+posCount+" "+negCount);
+        System.out.println(""+posCount+" "+negCount);
         if (negCount == posCount) {
-//            System.out.println("Overall Neutral");
+            System.out.println("Overall Neutral");
             feedback = "Overall Neutral";
         }else if(negCount > posCount) {
-//            System.out.println("Overall Negative");
+            System.out.println("Overall Negative");
             feedback = "Overall Negative";
         }else if (negCount < posCount) {
-//            System.out.println("Overall Positive");
+            System.out.println("Overall Positive");
             feedback = "Overall Positive";
         }
 
@@ -72,6 +79,14 @@ public class loadingScan extends AppCompatActivity {
 
         posPercent = Integer.toString(posTotal);
         negPercent = Integer.toString(negTotal);
+
+        article = new Articles();
+        spid = FirebaseDatabase.getInstance().getReference().child("Articles");
+        article.setArticle_Name(articleName);
+        article.setPosPercent(posPercent);
+        article.setNegPercent(negPercent);
+        article.setFeedback(feedback);
+        spid.push().setValue(article);
 
 
         handler.postDelayed(new Runnable() {
