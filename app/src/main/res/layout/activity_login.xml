@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/blue" />
 
     <EditText
-        android:id="@+id/usernameInput"
+        android:id="@+id/usernamelogInput"
         android:layout_width="274sp"
         android:layout_height="48sp"
         android:layout_alignParentStart="true"
@@ -32,7 +32,7 @@
         android:ems="10"
         android:inputType="text"
         android:background="@drawable/rounded_corner_1"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:text="Username"
         android:textAlignment="center"
         android:textColor="@color/button_text"
@@ -40,7 +40,7 @@
         android:alpha="0.4"/>
 
     <EditText
-        android:id="@+id/passwordInput"
+        android:id="@+id/passwordlogInput"
         android:layout_width="274sp"
         android:layout_height="48sp"
         android:layout_alignParentStart="true"
@@ -52,7 +52,7 @@
         android:ems="10"
         android:inputType="text"
         android:background="@drawable/rounded_corner_1"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:text="Password"
         android:textAlignment="center"
         android:textColor="@color/button_text"
@@ -71,13 +71,13 @@
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="180dp"
         android:background="@drawable/rounded_corner_2"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:text="Log in"
         android:textColor="@color/button_text"
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -87,7 +87,7 @@
         android:layout_marginTop="490dp"
         android:layout_marginEnd="80dp"
         android:textAlignment="center"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:textSize="12dp"
         android:text="forgot password?"
         android:alpha="0.6" />
@@ -105,7 +105,7 @@
         />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/or2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -115,7 +115,7 @@
         android:layout_marginTop="533dp"
         android:layout_marginEnd="80dp"
         android:textAlignment="center"
-        android:fontFamily="@font/lato"
+        android:fontFamily="@font/lato_regular"
         android:textSize="12dp"
         android:text="OR" />
 
@@ -132,7 +132,7 @@
         />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/with"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -142,8 +142,8 @@
         android:layout_marginTop="570dp"
         android:layout_marginEnd="80dp"
         android:textAlignment="center"
-        android:fontFamily="@font/lato"
-        android:textSize="12dp"
+        android:fontFamily="@font/lato_regular"
+        android:textSize="15dp"
         android:text="SIGN IN WITH" />
 
     <ImageView
