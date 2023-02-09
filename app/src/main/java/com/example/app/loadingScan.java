@@ -80,23 +80,11 @@ public class loadingScan extends AppCompatActivity {
             System.out.println("Overall Positive");
             feedback = "Overall Positive";
         }
-
-        article = new Articles();
-        spid = FirebaseDatabase.getInstance().getReference().child("Articles");
-        article.setArticle_Name(articleName);
-        article.setPosPercent(posPercent);
-        article.setNegPercent(negPercent);
-        article.setFeedback(feedback);
-        spid.push().setValue(article);
-
         long end = System.nanoTime();
-
         long elapsedTime = end - start;
         int secondsConvert = 1_000_000_000;
         double elapsedTimeinSecond = (double) elapsedTime / secondsConvert;
         long convert = TimeUnit.SECONDS.convert(elapsedTime, TimeUnit.NANOSECONDS);
-
-
         posTotal = (posCount / (posCount + negCount)) * 100;
         negTotal = (negCount / (posCount + negCount)) * 100;
 
@@ -105,6 +93,14 @@ public class loadingScan extends AppCompatActivity {
         negPercent = Integer.toString(negTotal);
 
 
+        article = new Articles();
+        spid = FirebaseDatabase.getInstance().getReference().child("Articles");
+        article.setArticle_Name(articleName);
+        article.setPosPercent(posPercent);
+        article.setNegPercent(negPercent);
+        article.setFeedback(feedback);
+        article.setTime(timeTotal);
+        spid.push().setValue(article);
 
                 Intent i = new Intent(loadingScan.this, result.class);
                 i.putExtra("article_Name", articleName);

@@ -7,6 +7,16 @@ public class Articles {
     private String negPercent;
     private String feedback;
 
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     public String getArticle_Name() {
         return Article_Name;
     }
