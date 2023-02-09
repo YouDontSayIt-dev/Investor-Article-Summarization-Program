@@ -67,7 +67,8 @@
         android:layout_marginBottom="81dp"
         android:fontFamily="@font/lato_regular"
         android:text="SIGN UP WITH"
-        android:textColor="@color/button_text" />
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
     <ImageView
         android:id="@+id/reddit"

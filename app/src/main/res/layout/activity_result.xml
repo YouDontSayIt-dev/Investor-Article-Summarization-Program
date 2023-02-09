@@ -289,7 +289,7 @@
         android:layout_marginStart="57dp"
         android:layout_marginTop="243dp"
         android:layout_marginEnd="237dp"
-        android:layout_marginBottom="441dp"
+        android:layout_marginBottom="435dp"
         android:fontFamily="@font/lato_regular"
         android:text="80%"
         android:textColor="#2D8B86"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/textViewNew"
@@ -8,33 +8,22 @@
     android:background="@drawable/add_background"
     tools:context=".addArticle">
 
-    <ImageButton
-        android:id="@+id/btn_return"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="311dp"
-        android:background="@drawable/return_btn"
-        android:contentDescription="returnBTN"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/return_btn" />
-
     <TextView
         android:id="@+id/textViewNEW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="125dp"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="620dp"
         android:contentDescription="NEW"
         android:fontFamily="@font/lato_regular"
         android:text="NEW"
+        android:textAlignment="center"
         android:textColor="@color/button_text"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,65 +32,52 @@
         tools:text="NEW" />
 
     <ImageButton
+        android:id="@+id/btn_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/return_btn"
+        app:srcCompat="@drawable/return_btn" />
+
+    <ImageButton
         android:id="@+id/btn_scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="600dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="128dp"
-        android:background="@drawable/add_btn"
-        android:contentDescription="btnSCAN"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24"
-        app:srcCompat="@drawable/add_btn" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="89dp"
+        android:background="@drawable/scan_btn"
+        app:srcCompat="@drawable/scan_btn" />
 
-    <TextView
-        android:id="@+id/btn_scan_text"
+    <EditText
+        android:id="@+id/articleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="122dp"
-        android:layout_marginEnd="123dp"
-        android:layout_marginBottom="118dp"
-        android:fontFamily="@font/lato_regular"
-        android:text="SCAN"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/editTextArticleName"
-        android:layout_width="360dp"
-        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="160dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginBottom="570dp"
         android:ems="10"
         android:fontFamily="@font/lato_regular"
-        android:textColor="@color/black"
-        android:textSize="20dp"
         android:hint="Article Name"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/editTextArticle"
-        android:layout_width="360dp"
-        android:layout_height="48dp"
+        android:id="@+id/multiLineArticleText"
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:layout_below="@+id/articleName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="-560dp"
         android:layout_marginEnd="30dp"
         android:ems="10"
         android:fontFamily="@font/lato_regular"
@@ -109,11 +85,6 @@
         android:hint="Article Text"
         android:inputType="textMultiLine"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="20dp" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
