@@ -9,7 +9,6 @@ import android.content.Intent;
 public class MainActivity extends AppCompatActivity {
     Handler h = new Handler();
 
-    1246
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

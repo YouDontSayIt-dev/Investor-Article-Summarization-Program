@@ -38,15 +38,15 @@ public class login extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    String TXTemail, TXTpassword;
-                    TXTemail = String.valueOf(email.getText());
-                    TXTpassword = String.valueOf(password.getText());
+                String TXTemail, TXTpassword;
+                TXTemail = String.valueOf(email.getText());
+                TXTpassword = String.valueOf(password.getText());
 
-                if(TextUtils.isEmpty(TXTemail)){
+                if (TextUtils.isEmpty(TXTemail)) {
                     Toast.makeText(login.this, "Enter email", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(TextUtils.isEmpty(TXTpassword)){
+                if (TextUtils.isEmpty(TXTpassword)) {
                     Toast.makeText(login.this, "Enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -61,6 +61,8 @@ public class login extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(login.this, "Login Success",
                                             Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), Home.class);
+                                            startActivity(intent);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -73,34 +75,37 @@ public class login extends AppCompatActivity {
             }
         });
 
-        username = (EditText) findViewById(R.id.usernamelogInput);
-        password = (EditText) findViewById(R.id.passwordlogInput);
-
-        login = (Button) findViewById(R.id.btn_login);
-        DB = new DBHelper(this);
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-
-                if(user.equals("")||pass.equals(""))
-                    Toast.makeText(login.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-                else {
-                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                    if(checkuserpass==true){
-                        Toast.makeText(login.this, "Logged in", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Home.class);
-                        startActivity(intent);
-                    }
-                    else{
-                        Toast.makeText(login.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-        });
-
     }
 }
+//
+//        username = (EditText) findViewById(R.id.usernamelogInput);
+//        password = (EditText) findViewById(R.id.passwordlogInput);
+//
+//        login = (Button) findViewById(R.id.btn_login);
+//        DB = new DBHelper(this);
+//
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                String user = username.getText().toString();
+//                String pass = password.getText().toString();
+//
+//                if(user.equals("")||pass.equals(""))
+//                    Toast.makeText(login.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+//                else {
+//                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+//                    if(checkuserpass==true){
+//                        Toast.makeText(login.this, "Logged in", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(getApplicationContext(), Home.class);
+//                        startActivity(intent);
+//                    }
+//                    else{
+//                        Toast.makeText(login.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            }
+//        });
+//
+//    }
+//}
