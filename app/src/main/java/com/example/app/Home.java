@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import android.widget.Inten
 public class Home extends AppCompatActivity {
     Button addArt;
     @Override
@@ -17,7 +18,7 @@ public class Home extends AppCompatActivity {
         addArt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, addArticle.class);
+                Intent intent = new Intent(this, addArticle.class);
                 startActivity(intent);
                 finish();
             }

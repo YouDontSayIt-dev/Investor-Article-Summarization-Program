@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                Intent i = new Intent(MainActivity.this, welcomeScreen.class);
+                Intent i = new Intent(getApplicationContext, welcomeScreen.class);
                 startActivity(i);
                 finish();
             }

@@ -73,7 +73,7 @@ import android.util.Log;
                                         Log.d(TAG, "createUserWithEmail:success");
                                         Toast.makeText(signup.this, "Account created.",
                                                 Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(signup.this, welcomeScreen.class);
+                                        Intent intent = new Intent(getApplicationContext, welcomeScreen.class);
                                         startActivity(intent);
                                         finish();
 
