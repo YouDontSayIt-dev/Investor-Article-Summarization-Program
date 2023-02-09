@@ -73,7 +73,9 @@ import android.util.Log;
                                         Log.d(TAG, "createUserWithEmail:success");
                                         Toast.makeText(signup.this, "Account created.",
                                                 Toast.LENGTH_SHORT).show();
-
+                                        Intent intent = new Intent(signup.this, welcomeScreen.class);
+                                        startActivity(intent);
+                                        finish();
 
                                     } else {
                                         // If sign in fails, display a message to the user.
@@ -85,9 +87,7 @@ import android.util.Log;
                                 }
                             });
 
-                    Intent intent = new Intent(signup.this, welcomeScreen.class);
-                    startActivity(intent);
-                    finish();
+
 
 
                 }
