@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.text.TextUtils;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
 
@@ -17,12 +20,19 @@ import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import androidx.annotation.NonNull;
+import androidx.core.view.GestureDetectorCompat;
+
 import android.util.Log;
 
 
-    public class signup extends AppCompatActivity {
+    public class signup extends AppCompatActivity implements OnGestureListener {
+        public static final int SWIPE_THRESHOLD = 100;
+        public static final int SWIPE_VELOCITY_THRESHOLD = 100;
+        private GestureDetectorCompat signupDetect;
         EditText username, email, password, confirmpassword;
         Button signupbtn;
+
+        TextView loginTXT;
 
         String TAG = "LOG: ";
 
@@ -38,8 +48,15 @@ import android.util.Log;
             password = (EditText) findViewById(R.id.SIpasswordInput);
             confirmpassword = (EditText) findViewById(R.id.SIconfirmpasswordInput);
             signupbtn = (Button) findViewById(R.id.btn_signin);
+            loginTXT = (TextView) findViewById(R.id.logintxt);
 
-
+            loginTXT.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(signup.this, login.class);
+                    startActivity(intent);
+                }
+            });
             signupbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -93,7 +110,74 @@ import android.util.Log;
                 }
             });
 
+            signupDetect = new GestureDetectorCompat(this,this);
 
+        }
+
+        @Override
+        public boolean onDown(@NonNull MotionEvent motionEvent) {
+            return false;
+        }
+
+        @Override
+        public void onShowPress(@NonNull MotionEvent motionEvent) {
+
+        }
+
+        @Override
+        public boolean onSingleTapUp(@NonNull MotionEvent motionEvent) {
+            return false;
+        }
+
+        @Override
+        public boolean onScroll(@NonNull MotionEvent motionEvent, @NonNull MotionEvent motionEvent1, float v, float v1) {
+            return false;
+        }
+
+        @Override
+        public void onLongPress(@NonNull MotionEvent motionEvent) {
+
+        }
+
+        @Override
+        public boolean onFling(@NonNull MotionEvent downEvent, @NonNull MotionEvent moveEvent, float velocityX, float velocityY) {
+            boolean result = false;
+            float diffY = moveEvent.getY() - downEvent.getY();
+            float diffX = moveEvent.getX() - downEvent.getX();
+
+            if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                if (diffX > 0) {
+                    onSwipeRight();
+                } else {
+                    onSwipeLeft();
+                }
+                result = true;
+            } else {
+                if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+                    if (diffY > 0) {
+//                        onSwipeBottom();
+                    } else {
+//                        onSwipeUp();
+                    }
+                }
+                result = true;
+            }
+            return result;
+        }
+
+        private void onSwipeRight() {
+            Intent intent = new Intent(signup.this, welcomeScreen.class);
+            startActivity(intent);
+        }
+
+        private void onSwipeLeft() {
+
+        }
+
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+            signupDetect.onTouchEvent(event);
+            return super.onTouchEvent(event);
         }
     }
 
