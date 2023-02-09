@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/blue" />
 
     <EditText
-        android:id="@+id/usernameInput"
+        android:id="@+id/SIusernameInput"
         android:layout_width="274sp"
         android:layout_height="48sp"
         android:layout_alignParentStart="true"
@@ -32,15 +32,15 @@
         android:ems="10"
         android:inputType="text"
         android:background="@drawable/rounded_corner_1"
-        android:fontFamily="@font/lato_regular"
-        android:text="Username"
+        android:fontFamily="@font/lato"
+        android:hint="Username";
         android:textAlignment="center"
         android:textColor="@color/button_text"
         android:textSize="20dp"
         android:alpha="0.4"/>
 
     <EditText
-        android:id="@+id/emailInput"
+        android:id="@+id/SIemailInput"
         android:layout_width="274sp"
         android:layout_height="48sp"
         android:layout_alignParentStart="true"
@@ -52,15 +52,15 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:background="@drawable/rounded_corner_1"
-        android:fontFamily="@font/lato_regular"
-        android:text="Email"
+        android:fontFamily="@font/lato"
+        android:hint="Email"
         android:textAlignment="center"
         android:textColor="@color/button_text"
         android:textSize="20dp"
         android:alpha="0.4"/>
 
     <EditText
-        android:id="@+id/passwordInput"
+        android:id="@+id/SIpasswordInput"
         android:layout_width="274sp"
         android:layout_height="48sp"
         android:layout_alignParentStart="true"
@@ -72,15 +72,15 @@
         android:ems="10"
         android:inputType="text"
         android:background="@drawable/rounded_corner_1"
-        android:fontFamily="@font/lato_regular"
-        android:text="Password"
+        android:fontFamily="@font/lato"
+        android:hint="Password"
         android:textAlignment="center"
         android:textColor="@color/button_text"
         android:textSize="20dp"
         android:alpha="0.4"/>
 
     <EditText
-        android:id="@+id/confirmpasswordInput"
+        android:id="@+id/SIconfirmpasswordInput"
         android:layout_width="274sp"
         android:layout_height="48sp"
         android:layout_alignParentStart="true"
@@ -92,8 +92,8 @@
         android:ems="10"
         android:inputType="text"
         android:background="@drawable/rounded_corner_1"
-        android:fontFamily="@font/lato_regular"
-        android:text="Confirm Password"
+        android:fontFamily="@font/lato"
+        android:hint="Confirm Password"
         android:textAlignment="center"
         android:textColor="@color/button_text"
         android:textSize="20dp"
