@@ -69,8 +69,9 @@ public class welcomeScreen extends AppCompatActivity implements OnGestureListene
 
     @Override
     public boolean onFling(@NonNull MotionEvent motionEvent, @NonNull MotionEvent motionEvent1, float v, float v1) {
-
-        return true;
+        Intent intent = new Intent(welcomeScreen.this, signup.class);
+        startActivity(intent);
+        return false;
     }
 
     @Override
