@@ -24,7 +24,7 @@ public class welcomeScreen extends AppCompatActivity implements OnGestureListene
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext,signup.class);
+                Intent intent = new Intent(welcomeScreen.this,signup.class);
                 startActivity(intent);
                 finish();
             }
@@ -32,7 +32,7 @@ public class welcomeScreen extends AppCompatActivity implements OnGestureListene
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext,login.class);
+                Intent intent = new Intent(welcomeScreen.this,login.class);
                 startActivity(intent);
                 finish();
             }
