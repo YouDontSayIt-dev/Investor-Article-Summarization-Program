@@ -79,7 +79,7 @@ public class loadingScan extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i = new Intent(loadingScan.this, result.class);
-                i.putExtra("art_Name", articleName);
+                i.putExtra("article_Name", articleName);
                 i.putExtra("art_Text", articleText);
                 i.putExtra("pos_Percent", posPercent);
                 i.putExtra("neg_Percent", negPercent);

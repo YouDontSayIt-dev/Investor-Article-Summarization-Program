@@ -3,10 +3,13 @@ package com.example.app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class result extends AppCompatActivity {
 
-    private String articleName, articleText, posPercent, negPercent, feedback;
+    private String articleName, posPercent, negPercent, feedback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,8 +18,18 @@ public class result extends AppCompatActivity {
         articleName = getIntent().getStringExtra("article_Name");
 //        System.out.println("Article Name: " + articleName);
 
-        articleText = getIntent().getStringExtra("article_Text");
-//        System.out.println("Article Text: " + articleText);
+        posPercent = getIntent().getStringExtra("pos_Percent");
+        negPercent = getIntent().getStringExtra("neg_Percent");
+        feedback = getIntent().getStringExtra("feedback");
 
+        TextView articleNameResult = (TextView) findViewById(R.id.articleName);
+        TextView positiveResult = (TextView) findViewById(R.id.textViewPositiveResult);
+        TextView negativeResult = (TextView) findViewById(R.id.textViewNegativeResult);
+        TextView feedbackResult = (TextView) findViewById(R.id.textViewGrade);
+
+        articleNameResult.setText(articleName);
+        positiveResult.setText(posPercent);
+        negativeResult.setText(negPercent);
+        feedbackResult.setText(feedback);
     }
 }

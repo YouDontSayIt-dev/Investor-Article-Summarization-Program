@@ -15,6 +15,9 @@
             android:name=".Home"
             android:exported="false" />
         <activity
+            android:name=".result"
+            android:exported="false" />
+        <activity
             android:name=".loadingScan"
             android:exported="false" />
         <activity
