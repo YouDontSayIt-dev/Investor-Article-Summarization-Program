@@ -36,6 +36,12 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-database:20.1.0'
     implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation files('libs\\ejml-core-0.39.jar')
+    implementation files('libs\\ejml-ddense-0.39.jar')
+    implementation files('libs\\ejml-simple-0.39.jar')
+    implementation files('libs\\stanford-corenlp-4.5.1.jar')
+    implementation files('libs\\stanford-corenlp-4.5.1-models.jar')
+    implementation files('libs\\stanford-corenlp-4.5.1-models-english.jar')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
