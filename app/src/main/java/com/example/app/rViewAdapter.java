@@ -3,6 +3,7 @@ package com.example.app;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.annotation.NonNull;
 import android.content.Context;
@@ -16,9 +17,12 @@ public class rViewAdapter extends RecyclerView.Adapter<rViewAdapter.rViewHolder>
     Context context;
     ArrayList<Articles> list;
 
-    public rViewAdapter(Context context, ArrayList<Articles> list) {
+    SelectListener listener;
+
+    public rViewAdapter(Context context, ArrayList<Articles> list, SelectListener listener) {
         this.context = context;
         this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
@@ -34,6 +38,15 @@ public class rViewAdapter extends RecyclerView.Adapter<rViewAdapter.rViewHolder>
         Articles article = list.get(position);
         holder.articleName.setText(article.getArticle_Name());
         holder.percentage.setText(article.getPosPercent());
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClicked(list.get(position));
+            }
+        });
+
+
     }
 
     @Override
@@ -46,12 +59,14 @@ public class rViewAdapter extends RecyclerView.Adapter<rViewAdapter.rViewHolder>
     public static class rViewHolder extends RecyclerView.ViewHolder{
 
         TextView articleName,percentage;
+        CardView cardView;
 
         rViewHolder(@NonNull View itemView){
             super(itemView);
 
             articleName = itemView.findViewById(R.id.home_art_name);
             percentage = itemView.findViewById(R.id.home_percent);
+            cardView = itemView.findViewById(R.id.main_container);
         }
     }
 }

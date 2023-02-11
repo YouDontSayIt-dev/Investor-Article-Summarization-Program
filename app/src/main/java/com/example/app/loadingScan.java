@@ -8,6 +8,9 @@ import android.os.Handler;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -34,6 +37,11 @@ public class loadingScan extends AppCompatActivity {
 
     DatabaseReference spid;
     Articles article;
+
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    String uid = user.getUid();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +115,7 @@ public class loadingScan extends AppCompatActivity {
 
 
                     article = new Articles();
-                    spid = FirebaseDatabase.getInstance().getReference().child("Articles");
+                    spid = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Articles");
                     article.setArticle_Name(articleName);
                     article.setPosPercent(posPercent + " %");
                     article.setNegPercent(negPercent + " %") ;
