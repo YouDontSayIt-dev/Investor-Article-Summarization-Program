@@ -35,10 +35,10 @@ public class result extends AppCompatActivity {
         TextView timeResult = (TextView) findViewById(R.id.textViewTime);
 
         articleNameResult.setText(articleName);
-        positiveResult.setText(posPercent + "%");
-        negativeResult.setText(negPercent + "%");
+        positiveResult.setText(posPercent);
+        negativeResult.setText(negPercent);
         feedbackResult.setText(feedback);
-        timeResult.setText(timeTotal + " Seconds");
+        timeResult.setText(timeTotal);
 
 
         result = (ImageButton) findViewById(R.id.return_btn);
