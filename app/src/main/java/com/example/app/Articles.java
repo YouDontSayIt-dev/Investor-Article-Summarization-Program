@@ -7,8 +7,17 @@ public class Articles {
     private String negPercent;
     private String feedback;
 
+    private String avePercent;
+
     private String time;
 
+    public String getAvePercent() {
+        return avePercent;
+    }
+
+    public void setAvePercent(String avePercent) {
+        this.avePercent = avePercent;
+    }
     public String getTime() {
         return time;
     }

@@ -33,7 +33,7 @@ public class rViewAdapter extends RecyclerView.Adapter<rViewAdapter.rViewHolder>
     public void onBindViewHolder(@NonNull rViewHolder holder, int position) {
         Articles article = list.get(position);
         holder.articleName.setText(article.getArticle_Name());
-        holder.percentage.setText(article.getNegPercent());
+        holder.percentage.setText(article.getPosPercent());
     }
 
     @Override

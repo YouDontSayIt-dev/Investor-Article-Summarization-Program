@@ -32,6 +32,7 @@ public class Home extends AppCompatActivity {
     DatabaseReference spid;
     rViewAdapter rViewAdapter;
     ArrayList<Articles> list;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

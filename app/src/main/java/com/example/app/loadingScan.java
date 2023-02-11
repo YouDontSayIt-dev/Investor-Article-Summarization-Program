@@ -26,8 +26,8 @@ import edu.stanford.nlp.util.CoreMap;
 
 public class loadingScan extends AppCompatActivity {
     long start = System.nanoTime();
-    private int posCount = 0, negCount = 0, posTotal = 0, negTotal = 0;
-    private String articleName, articleText, posPercent, negPercent, feedback, timeTotal;
+    private int posCount = 0, negCount = 0, posTotal = 0, negTotal = 0, aveTotal = 0;
+    private String articleName, articleText, posPercent, negPercent, feedback, timeTotal, avePercent;
     private Handler handler = new Handler();
     boolean stopLoop = true;
     private ImageView circle;
@@ -98,16 +98,20 @@ public class loadingScan extends AppCompatActivity {
                     long convert = TimeUnit.SECONDS.convert(elapsedTime, TimeUnit.NANOSECONDS);
                     posTotal = (posCount / (posCount + negCount)) * 100;
                     negTotal = (negCount / (posCount + negCount)) * 100;
+                    aveTotal = (posTotal + negTotal) / 2;
 
                     timeTotal =  Float.toString(convert);
                     posPercent = Integer.toString(posTotal);
                     negPercent = Integer.toString(negTotal);
+                    avePercent = Integer.toString(aveTotal);
+
 
                     article = new Articles();
                     spid = FirebaseDatabase.getInstance().getReference().child("Articles");
                     article.setArticle_Name(articleName);
-                    article.setPosPercent(posPercent);
-                    article.setNegPercent(negPercent);
+                    article.setPosPercent(posPercent + " %");
+                    article.setNegPercent(negPercent + " %") ;
+                    article.setAvePercent(avePercent + " %");
                     article.setFeedback(feedback);
                     article.setTime(timeTotal);
                     spid.push().setValue(article);
