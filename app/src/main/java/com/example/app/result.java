@@ -2,12 +2,17 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class result extends AppCompatActivity {
+
+    ImageButton result;
 
     private String articleName, posPercent, negPercent, feedback, timeTotal;
     @Override
@@ -34,5 +39,20 @@ public class result extends AppCompatActivity {
         negativeResult.setText(negPercent + "%");
         feedbackResult.setText(feedback);
         timeResult.setText(timeTotal + " Seconds");
+
+
+        result = (ImageButton) findViewById(R.id.return_btn);
+
+        result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(result.this, Home.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
+
 }

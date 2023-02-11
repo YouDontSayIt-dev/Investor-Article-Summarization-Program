@@ -117,9 +117,9 @@ public class loadingScan extends AppCompatActivity {
                     article = new Articles();
                     spid = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Articles");
                     article.setArticle_Name(articleName);
-                    article.setPosPercent(posPercent + " %");
-                    article.setNegPercent(negPercent + " %") ;
-                    article.setAvePercent(avePercent + " %");
+                    article.setPosPercent(posPercent);
+                    article.setNegPercent(negPercent) ;
+                    article.setAvePercent(avePercent);
                     article.setFeedback(feedback);
                     article.setTime(timeTotal);
                     spid.push().setValue(article);

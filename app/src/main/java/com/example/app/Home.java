@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.*;
 import android.content.Intent;
 import android.view.MotionEvent;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,24 +40,9 @@ public class Home extends AppCompatActivity implements SelectListener {
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
      String uid = user.getUid();
+     String name = user.getEmail();
 
-    @Override
-    public void onItemClicked(Articles articles) {
-        String articleName, articleText, posPercent, negPercent, feedback, timeTotal;
-        articleName = articles.getArticle_Name();
-        posPercent = articles.getPosPercent();
-        negPercent = articles.getNegPercent();
-        feedback = articles.getFeedback();
-        timeTotal = articles.getTime();
-        Intent intent = new Intent(Home.this, result.class);
-        intent.putExtra("article_Name", articleName);
-        intent.putExtra("pos_Percent", posPercent);
-        intent.putExtra("neg_Percent", negPercent);
-        intent.putExtra("feedback", feedback);
-        intent.putExtra("time_total",timeTotal);
-        startActivity(intent);
-        finish();
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,17 +50,12 @@ public class Home extends AppCompatActivity implements SelectListener {
         setContentView(R.layout.activity_home);
         addArt = findViewById(R.id.addArt_btn);
 
-
+        TextView hello_txt = (TextView) findViewById(R.id.hello);
+        hello_txt.setText("Hello, " + name);
         addArt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, result.class);
-                intent.putExtra("article_Name", articleName);
-                intent.putExtra("art_Text", articleText);
-                intent.putExtra("pos_Percent", posPercent);
-                intent.putExtra("neg_Percent", negPercent);
-                intent.putExtra("feedback", feedback);
-                intent.putExtra("time_total",timeTotal);
+                Intent intent = new Intent(Home.this, addArticle.class);
                 startActivity(intent);
                 finish();
             }
@@ -103,4 +86,21 @@ public class Home extends AppCompatActivity implements SelectListener {
         });
 
     }
+                @Override
+                public void onItemClicked(Articles articles) {
+                    String articleName, articleText, posPercent, negPercent, feedback, timeTotal;
+                    articleName = articles.getArticle_Name();
+                    posPercent = articles.getPosPercent();
+                    negPercent = articles.getNegPercent();
+                    feedback = articles.getFeedback();
+                    timeTotal = articles.getTime();
+                    Intent intent = new Intent(Home.this, result.class);
+                    intent.putExtra("article_Name", articleName);
+                    intent.putExtra("pos_Percent", posPercent);
+                    intent.putExtra("neg_Percent", negPercent);
+                    intent.putExtra("feedback", feedback);
+                    intent.putExtra("time_total",timeTotal);
+                    startActivity(intent);
+                    finish();
+                }
 }
