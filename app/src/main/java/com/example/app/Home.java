@@ -36,11 +36,22 @@ public class Home extends AppCompatActivity implements SelectListener {
     ArrayList<Articles> list;
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    String uid = user.getUid();
+     String uid = user.getUid();
 
     @Override
     public void onItemClicked(Articles articles) {
+        String articleName, articleText, posPercent, negPercent, feedback, timeTotal;
+        articleName = articles.getArticle_Name();
+        posPercent = articles.getPosPercent();
+        negPercent = articles.getNegPercent();
+        feedback = articles.getFeedback();
+        timeTotal = articles.getTime();
         Intent intent = new Intent(Home.this, result.class);
+        intent.putExtra("article_Name", articleName);
+        intent.putExtra("pos_Percent", posPercent);
+        intent.putExtra("neg_Percent", negPercent);
+        intent.putExtra("feedback", feedback);
+        intent.putExtra("time_total",timeTotal);
         startActivity(intent);
         finish();
     }
