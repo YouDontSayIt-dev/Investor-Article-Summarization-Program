@@ -29,7 +29,8 @@ import edu.stanford.nlp.util.CoreMap;
 
 public class loadingScan extends AppCompatActivity {
     long start = System.nanoTime();
-    private int posCount = 0, negCount = 0, posTotal = 0, negTotal = 0, aveTotal = 0;
+    private int posCount = 0, negCount = 0;
+    private double posTotal=0, negTotal=0, aveTotal=0, total=0, roundedPos, roundedNeg, roundedAve;
     private String articleName, articleText, posPercent, negPercent, feedback, timeTotal, avePercent;
     private Handler handler = new Handler();
     boolean stopLoop = true;
@@ -88,30 +89,46 @@ public class loadingScan extends AppCompatActivity {
                         }
                     }
 
-                    System.out.println(""+posCount+" "+negCount);
-                    if (negCount == posCount) {
-                        System.out.println("Overall Neutral");
-                        feedback = "Overall Neutral";
-                    }else if(negCount > posCount) {
-                        System.out.println("Overall Negative");
-                        feedback = "Overall Negative";
-                    }else if (negCount < posCount) {
-                        System.out.println("Overall Positive");
-                        feedback = "Overall Positive";
-                    }
                     long end = System.nanoTime();
                     long elapsedTime = end - start;
                     int secondsConvert = 1_000_000_000;
                     double elapsedTimeinSecond = (double) elapsedTime / secondsConvert;
                     long convert = TimeUnit.SECONDS.convert(elapsedTime, TimeUnit.NANOSECONDS);
-                    posTotal = (posCount / (posCount + negCount)) * 100;
-                    negTotal = (negCount / (posCount + negCount)) * 100;
-                    aveTotal = (posTotal + negTotal) / 2;
+                    total = posCount+negCount;
+                    posTotal = (double) posCount/total*100;
+                    negTotal = (double) negCount/total*100;
+//                    aveTotal =  total/2;
+
+//                    double sample = (double) 2/(2+3)*100;
+//                    System.out.println("HERE");
+//                    System.out.println(sample);
+
+                    System.out.println(""+posCount+" "+negCount);
+                    System.out.println("HERE");
+                    System.out.println(""+posTotal+" "+negTotal);
+                    if(negTotal > posTotal) {
+                        System.out.println("Overall Negative");
+                        feedback = "Overall Negative";
+                    }else if (negTotal < posTotal) {
+                        System.out.println("Overall Positive");
+                        feedback = "Overall Positive";
+                    }else if (negTotal == posTotal) {
+                        System.out.println("Overall Neutral");
+                        feedback = "Overall Neutral";
+                    }else if (negCount == posCount){
+                        System.out.println("Overall Neutral");
+                        feedback = "Overall Neutral";
+                    }
+
+                    roundedPos = (double) Math.round(posTotal * 100)/100;
+                    roundedNeg = (double) Math.round(negTotal * 100)/100;
+//                    roundedAve = (double) Math.round(aveTotal * 100)/100;
+
 
                     timeTotal =  Float.toString(convert);
-                    posPercent = Integer.toString(posTotal);
-                    negPercent = Integer.toString(negTotal);
-                    avePercent = Integer.toString(aveTotal);
+                    posPercent = Double.toString(roundedPos);
+                    negPercent = Double.toString(roundedNeg);
+//                    avePercent = Double.toString(roundedAve);
 
 
                     article = new Articles();
@@ -119,7 +136,7 @@ public class loadingScan extends AppCompatActivity {
                     article.setArticle_Name(articleName);
                     article.setPosPercent(posPercent + " %");
                     article.setNegPercent(negPercent + " %") ;
-                    article.setAvePercent(avePercent);
+//                    article.setAvePercent(avePercent);
                     article.setFeedback(feedback);
                     article.setTime(timeTotal + " seconds");
                     spid.push().setValue(article);
