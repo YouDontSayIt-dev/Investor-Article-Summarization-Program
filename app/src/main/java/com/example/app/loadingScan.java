@@ -88,17 +88,6 @@ public class loadingScan extends AppCompatActivity {
                         }
                     }
 
-                    System.out.println(""+posCount+" "+negCount);
-                    if (negCount == posCount) {
-                        System.out.println("Overall Neutral");
-                        feedback = "Overall Neutral";
-                    }else if(negCount > posCount) {
-                        System.out.println("Overall Negative");
-                        feedback = "Overall Negative";
-                    }else if (negCount < posCount) {
-                        System.out.println("Overall Positive");
-                        feedback = "Overall Positive";
-                    }
                     long end = System.nanoTime();
                     long elapsedTime = end - start;
                     int secondsConvert = 1_000_000_000;
@@ -107,6 +96,18 @@ public class loadingScan extends AppCompatActivity {
                     posTotal = (posCount / (posCount + negCount)) * 100;
                     negTotal = (negCount / (posCount + negCount)) * 100;
                     aveTotal = (posTotal + negTotal) / 2;
+
+                    System.out.println(""+posCount+" "+negCount);
+                    if(negTotal > posTotal) {
+                        System.out.println("Overall Negative");
+                        feedback = "Overall Negative";
+                    }else if (negTotal < posTotal) {
+                        System.out.println("Overall Positive");
+                        feedback = "Overall Positive";
+                    }else if (negTotal == posTotal) {
+                        System.out.println("Overall Neutral");
+                        feedback = "Overall Neutral";
+                    }
 
                     timeTotal =  Float.toString(convert);
                     posPercent = Integer.toString(posTotal);
