@@ -48,6 +48,8 @@ public class forgot extends AppCompatActivity {
 
                 } else if (!Patterns.EMAIL_ADDRESS.matcher(emailTXT).matches()) {
                     Toast.makeText(forgot.this, "Valid email is required", Toast.LENGTH_SHORT).show();
+                    forgotPass.setError("Valid email is required");
+                    forgotPass.requestFocus();
                 } else {
                     resetPassword(emailTXT);
                 }

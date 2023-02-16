@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.*;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -29,7 +30,7 @@ public class login extends AppCompatActivity implements OnGestureListener {
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
     private GestureDetectorCompat loginDetect;
     FirebaseAuth mAuth;
-    String TAG = "LOG: ";
+    String TAG = "login";
     EditText email, password;
     Button loginbtn;
 
@@ -56,10 +57,14 @@ public class login extends AppCompatActivity implements OnGestureListener {
 
                 if (TextUtils.isEmpty(TXTemail)) {
                     Toast.makeText(login.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    email.setError("Email is required");
+                    email.requestFocus();
                     return;
                 }
                 if (TextUtils.isEmpty(TXTpassword)) {
                     Toast.makeText(login.this, "Enter password", Toast.LENGTH_SHORT).show();
+                    password.setError("Password is required");
+                    password.requestFocus();
                     return;
                 }
 
@@ -80,7 +85,6 @@ public class login extends AppCompatActivity implements OnGestureListener {
                                     Log.w(TAG, "signInWithEmail:failure", task.getException());
                                     Toast.makeText(login.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
-
                                 }
                             }
                         });

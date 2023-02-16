@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.MotionEvent;
@@ -67,18 +68,30 @@ import android.util.Log;
                     TXTconfirmPassword = String.valueOf(confirmpassword.getText());
                     if (!TXTpassword.equals(TXTconfirmPassword)) {
                         Toast.makeText(signup.this, "Password does not match", Toast.LENGTH_SHORT).show();
+                        confirmpassword.setError("Password must be the same");
+                        confirmpassword.requestFocus();
                         return;
                     }
                     if (TextUtils.isEmpty(TXTemail)) {
                         Toast.makeText(signup.this, "Enter email", Toast.LENGTH_SHORT).show();
+                        email.setError("Email is required");
+                        email.requestFocus();
                         return;
+                    }else if (!Patterns.EMAIL_ADDRESS.matcher(TXTemail).matches()) {
+                        Toast.makeText(signup.this, "Valid email is required", Toast.LENGTH_SHORT).show();
+                        email.setError("Valid email is required");
+                        email.requestFocus();
                     }
                     if (TextUtils.isEmpty(TXTusername)) {
                         Toast.makeText(signup.this, "Enter username", Toast.LENGTH_SHORT).show();
+                        username.setError("Username is required");
+                        username.requestFocus();
                         return;
                     }
                     if (TextUtils.isEmpty(TXTpassword)) {
                         Toast.makeText(signup.this, "Enter password", Toast.LENGTH_SHORT).show();
+                        password.setError("Password is required");
+                        password.requestFocus();
                         return;
                     }
 
