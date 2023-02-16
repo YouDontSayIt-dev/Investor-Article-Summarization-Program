@@ -137,7 +137,7 @@ public class login extends AppCompatActivity implements OnGestureListener {
             if (diffX > 0) {
                 onSwipeRight();
             } else {
-                onSwipeLeft();
+         //       onSwipeLeft();
             }
             result = true;
         } else {
@@ -156,10 +156,10 @@ public class login extends AppCompatActivity implements OnGestureListener {
     private void onSwipeRight() {
         Intent intent = new Intent(login.this, welcomeScreen.class);
         startActivity(intent);
+        finish();
     }
 
     private void onSwipeLeft() {
-
     }
 
     @Override

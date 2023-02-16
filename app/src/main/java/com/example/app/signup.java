@@ -162,7 +162,7 @@ import android.util.Log;
                 if (diffX > 0) {
                     onSwipeRight();
                 } else {
-                    onSwipeLeft();
+           //         onSwipeLeft();
                 }
                 result = true;
             } else {
@@ -181,6 +181,7 @@ import android.util.Log;
         private void onSwipeRight() {
             Intent intent = new Intent(signup.this, welcomeScreen.class);
             startActivity(intent);
+            finish();
         }
 
         private void onSwipeLeft() {
