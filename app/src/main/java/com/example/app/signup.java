@@ -35,7 +35,7 @@ import android.util.Log;
 
         TextView loginTXT;
 
-        String TAG = "LOG: ";
+        String TAG = "signup";
 
         FirebaseAuth mAuth;
 
