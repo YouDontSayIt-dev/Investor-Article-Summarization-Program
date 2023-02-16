@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sentEmail"
+    android:background="@drawable/loadingbg">
+
+    <ImageView
+        android:id="@+id/imageViewCheck"
+        android:layout_width="130dp"
+        android:layout_height="132dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="141dp"
+        app:srcCompat="@drawable/check" />
+
+    <TextView
+        android:id="@+id/txtprompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="332dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="EMAIL SENT."
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/txtprompt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="405dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="288dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="PLEASE CHECK YOUR EMAIL FOR THE RESET LINK"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+
+</RelativeLayout>

@@ -33,6 +33,8 @@ public class login extends AppCompatActivity implements OnGestureListener {
     EditText email, password;
     Button loginbtn;
 
+    TextView forgot;
+
 
 
     @Override
@@ -43,6 +45,7 @@ public class login extends AppCompatActivity implements OnGestureListener {
         email = (EditText) findViewById(R.id.LOemailInput);
         password = (EditText) findViewById(R.id.LOpasswordInput);
         loginbtn = (Button) findViewById(R.id.btn_login_acct);
+        forgot = (TextView) findViewById(R.id.forgot);
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +74,7 @@ public class login extends AppCompatActivity implements OnGestureListener {
                                     Toast.makeText(login.this, "Login Success",
                                             Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), Home.class);
-                                            startActivity(intent);
+                                    startActivity(intent);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -83,8 +86,16 @@ public class login extends AppCompatActivity implements OnGestureListener {
                         });
             }
         });
-        loginDetect = new GestureDetectorCompat(this,this);
 
+
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), forgot.class);
+                startActivity(intent);
+            }
+        });
+        loginDetect = new GestureDetectorCompat(this,this);
     }
 
     @Override
