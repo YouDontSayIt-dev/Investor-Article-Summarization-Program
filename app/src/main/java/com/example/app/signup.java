@@ -193,6 +193,12 @@ import android.util.Log;
             signupDetect.onTouchEvent(event);
             return super.onTouchEvent(event);
         }
+
+        @Override
+        public void finish() {
+            super.finish();
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+        }
     }
 
 //        EditText username, email, password, confirm;

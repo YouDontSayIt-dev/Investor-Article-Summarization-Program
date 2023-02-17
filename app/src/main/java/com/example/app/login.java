@@ -167,6 +167,12 @@ public class login extends AppCompatActivity implements OnGestureListener {
         loginDetect.onTouchEvent(event);
         return super.onTouchEvent(event);
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+    }
 }
 //
 //        username = (EditText) findViewById(R.id.usernamelogInput);
