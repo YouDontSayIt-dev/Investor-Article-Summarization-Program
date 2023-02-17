@@ -162,7 +162,7 @@ import android.util.Log;
                 if (diffX > 0) {
                     onSwipeRight();
                 } else {
-                    onSwipeLeft();
+           //         onSwipeLeft();
                 }
                 result = true;
             } else {
@@ -181,6 +181,7 @@ import android.util.Log;
         private void onSwipeRight() {
             Intent intent = new Intent(signup.this, welcomeScreen.class);
             startActivity(intent);
+            finish();
         }
 
         private void onSwipeLeft() {
@@ -191,6 +192,12 @@ import android.util.Log;
         public boolean onTouchEvent(MotionEvent event) {
             signupDetect.onTouchEvent(event);
             return super.onTouchEvent(event);
+        }
+
+        @Override
+        public void finish() {
+            super.finish();
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
         }
     }
 

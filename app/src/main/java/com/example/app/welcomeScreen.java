@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class welcomeScreen extends AppCompatActivity implements OnGestureListener {
+
+    public static final int SWIPE_THRESHOLD = 100;
+    public static final int SWIPE_VELOCITY_THRESHOLD = 100;
     private GestureDetectorCompat detector;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,10 +71,35 @@ public class welcomeScreen extends AppCompatActivity implements OnGestureListene
     }
 
     @Override
-    public boolean onFling(@NonNull MotionEvent motionEvent, @NonNull MotionEvent motionEvent1, float v, float v1) {
-        Intent intent = new Intent(welcomeScreen.this, signup.class);
-        startActivity(intent);
-        return false;
+    public boolean onFling(@NonNull MotionEvent downEvent, @NonNull MotionEvent moveEvent, float velocityX, float velocityY) {
+        boolean result = false;
+        float diffY = moveEvent.getY() - downEvent.getY();
+        float diffX = moveEvent.getX() - downEvent.getX();
+
+        if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+            if (diffX > 0) {
+                onSwipeRight();
+            } else {
+                onSwipeLeft();
+            }
+            result = true;
+        } else {
+            if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+                if (diffY > 0) {
+//                        onSwipeBottom();
+                } else {
+//                        onSwipeUp();
+                }
+            }
+            result = true;
+        }
+        return result;
+    }
+
+    private void onSwipeRight() {
+    }
+
+    private void onSwipeLeft() {
     }
 
     @Override
