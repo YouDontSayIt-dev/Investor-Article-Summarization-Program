@@ -307,7 +307,7 @@
         android:textSize="45dp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -319,7 +319,7 @@
         app:srcCompat="@drawable/check" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageViewEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -331,7 +331,7 @@
         app:srcCompat="@drawable/ex" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -343,7 +343,7 @@
         app:srcCompat="@drawable/clock" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
