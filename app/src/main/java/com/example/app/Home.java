@@ -32,6 +32,8 @@ import java.util.ArrayList;
 public class Home extends AppCompatActivity implements SelectListener {
     Button addArt;
 
+    ImageView logout;
+
     String articleName, articleText, posPercent, negPercent, feedback, timeTotal, avePercent;
     RecyclerView recyclerView;
     DatabaseReference spid;
@@ -49,6 +51,7 @@ public class Home extends AppCompatActivity implements SelectListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         addArt = findViewById(R.id.addArt_btn);
+        logout = (ImageView) findViewById(R.id.logoutIcon);
 
         TextView hello_txt = (TextView) findViewById(R.id.hello);
         hello_txt.setText("Hello, " + name);
@@ -56,6 +59,16 @@ public class Home extends AppCompatActivity implements SelectListener {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home.this, addArticle.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this,logout.class);
                 startActivity(intent);
                 finish();
             }
