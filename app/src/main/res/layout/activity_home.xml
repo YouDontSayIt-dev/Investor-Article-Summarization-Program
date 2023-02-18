@@ -23,7 +23,7 @@
 
 
     <ImageView
-        android:id="@+id/icon"
+        android:id="@+id/logoutIcon"
         android:layout_width="74dp"
         android:layout_height="62dp"
         android:layout_alignParentStart="true"
