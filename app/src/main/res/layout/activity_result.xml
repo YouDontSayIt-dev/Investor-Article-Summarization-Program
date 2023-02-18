@@ -14,8 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="26dp"
         android:layout_marginTop="34dp"
+        android:layout_marginEnd="337dp"
         android:background="@drawable/return_btn"
         app:srcCompat="@drawable/return_btn" />
 
