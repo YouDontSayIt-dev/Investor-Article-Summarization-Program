@@ -25,28 +25,27 @@
         <TextView
             android:id="@+id/home_art_name"
             android:layout_width="wrap_content"
-            android:layout_height="72dp"
-            android:fontFamily="@font/lato_regular"
-            android:gravity="left|bottom"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/lato"
             android:text=" Article Name: "
-            android:textAlignment="gravity"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/home_percent"
             android:layout_width="wrap_content"
-            android:layout_height="53dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:fontFamily="@font/lato_regular"
-            android:gravity="right|bottom"
+            android:fontFamily="@font/lato"
             android:text="Percentage: "
-            android:textAlignment="gravity"
-            android:textColor="#2D8B86"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="30sp" />
 
 
     </LinearLayout>
+
 
 
 </androidx.cardview.widget.CardView>
