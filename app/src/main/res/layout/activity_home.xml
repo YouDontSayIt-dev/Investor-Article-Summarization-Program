@@ -8,6 +8,7 @@
     android:background="@drawable/home_bg"
     tools:context=".Home">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/articleList"
         android:layout_width="200dp"
@@ -17,19 +18,18 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="0dp" />
-
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="-3dp" />
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="74dp"
-        android:layout_height="62dp"
+        android:layout_width="94dp"
+        android:layout_height="73dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="33dp"
         android:layout_marginEnd="309dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,10 +40,12 @@
         android:id="@+id/hello"
         android:layout_width="168dp"
         android:layout_height="36dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="141dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="154dp"
         android:alpha="0.6"
         android:fontFamily="@font/lato_regular"
         android:text="Hello, "
@@ -55,11 +57,14 @@
 
     <TextView
         android:id="@+id/check"
-        android:layout_width="wrap_content"
+        android:layout_width="259dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="42dp"
         android:alpha="0.6"
         android:fontFamily="@font/lato_regular"
         android:text="what investment would you like to check? "
@@ -74,11 +79,11 @@
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="137dp"
-        android:layout_marginEnd="150dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="145dp"
         android:alpha="0.6"
         android:fontFamily="@font/lato_regular"
         android:text="HISTORY"
@@ -89,19 +94,18 @@
 
     <Button
         android:id="@+id/addArt_btn"
-        android:layout_width="112dp"
-        android:layout_height="109dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="275dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="29dp"
         android:background="@drawable/addbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 
 </RelativeLayout>
