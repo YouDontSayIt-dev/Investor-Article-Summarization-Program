@@ -30,14 +30,14 @@ import android.util.Log;
         public static final int SWIPE_THRESHOLD = 100;
         public static final int SWIPE_VELOCITY_THRESHOLD = 100;
         private GestureDetectorCompat signupDetect;
-        EditText username, email, password, confirmpassword;
-        Button signupbtn;
+        private EditText username, email, password, confirmpassword;
+        private Button signupbtn;
 
-        TextView loginTXT;
+        private TextView loginTXT;
 
-        String TAG = "signup";
+        private String TAG = "signup";
 
-        FirebaseAuth mAuth;
+        private FirebaseAuth mAuth;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {

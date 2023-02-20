@@ -30,19 +30,26 @@ import java.util.ArrayList;
 
 
 public class Home extends AppCompatActivity implements SelectListener {
-    Button addArt;
+    private Button addArt;
 
-    ImageView logout;
+    private ImageView logout;
 
-    String articleName, articleText, posPercent, negPercent, feedback, timeTotal, avePercent;
-    RecyclerView recyclerView;
-    DatabaseReference spid;
-    rViewAdapter rViewAdapter;
-    ArrayList<Articles> list;
+    private String articleName;
+    private String articleText;
+    private String posPercent;
+    private String negPercent;
+    private String feedback;
+    private String timeTotal;
+    private String avePercent;
 
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-     String uid = user.getUid();
-     String name = user.getEmail();
+    private RecyclerView recyclerView;
+    private DatabaseReference spid;
+    private rViewAdapter rViewAdapter;
+    private ArrayList<Articles> list;
+
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private String uid = user.getUid();
+    private String name = user.getEmail();
 
 
 

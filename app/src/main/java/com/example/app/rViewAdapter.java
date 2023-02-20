@@ -14,10 +14,10 @@ import java.util.ArrayList;
 
 public class rViewAdapter extends RecyclerView.Adapter<rViewAdapter.rViewHolder> {
 
-    Context context;
-    ArrayList<Articles> list;
+    private Context context;
+    private ArrayList<Articles> list;
 
-    SelectListener listener;
+    private SelectListener listener;
 
     public rViewAdapter(Context context, ArrayList<Articles> list, SelectListener listener) {
         this.context = context;

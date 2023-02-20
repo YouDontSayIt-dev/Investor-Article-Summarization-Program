@@ -17,13 +17,13 @@ import com.google.firebase.auth.AuthResult;
 
 public class logout extends AppCompatActivity {
 
-    ImageButton logout;
-    TextView username,email;
+    private ImageButton logout;
+    private TextView username,email;
 
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-    String uid = user.getUid();
-    String name = user.getEmail();
+    private String uid = user.getUid();
+    private String name = user.getEmail();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

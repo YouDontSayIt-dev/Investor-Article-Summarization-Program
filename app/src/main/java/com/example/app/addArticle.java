@@ -12,8 +12,8 @@ import android.view.View;
 import android.widget.*;
 
 public class addArticle extends AppCompatActivity implements GestureDetector.OnGestureListener {
-    ImageButton btn_return;
-    ImageButton btn_scan;
+    private ImageButton btn_return;
+    private ImageButton btn_scan;
 
     public static final int SWIPE_THRESHOLD = 100;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;

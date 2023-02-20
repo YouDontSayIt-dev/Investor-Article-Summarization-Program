@@ -36,11 +36,11 @@ public class loadingScan extends AppCompatActivity {
     boolean stopLoop = true;
     private ImageView circle;
 
-    DatabaseReference spid;
-    Articles article;
+    private DatabaseReference spid;
+    private Articles article;
 
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    String uid = user.getUid();
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private String uid = user.getUid();
 
 
 

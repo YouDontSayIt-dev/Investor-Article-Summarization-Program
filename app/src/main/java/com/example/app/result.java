@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class result extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
-    ImageButton result;
+    private ImageButton result;
 
     public static final int SWIPE_THRESHOLD = 100;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;

@@ -29,12 +29,12 @@ public class login extends AppCompatActivity implements OnGestureListener {
     public static final int SWIPE_THRESHOLD = 100;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
     private GestureDetectorCompat loginDetect;
-    FirebaseAuth mAuth;
-    String TAG = "login";
-    EditText email, password;
-    Button loginbtn;
+    private FirebaseAuth mAuth;
+    private String TAG = "login";
+    private EditText email, password;
+    private Button loginbtn;
 
-    TextView forgot;
+    private TextView forgot;
 
 
 
