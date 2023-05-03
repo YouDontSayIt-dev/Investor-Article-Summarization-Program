@@ -11,6 +11,6 @@ Written in Java, this application is developed for android to aid in the researc
 | Mathew James Muyco  |   |
 | James Luis Blanco  |   |
 | Danica Garcia  |   |
-| Wilhelm Provido  |   |
+| Dominique Libardo  |   |
 
-last edited: February 20, 2022
+last edited: May 3, 2022
