@@ -8,9 +8,9 @@ Written in Java, this application is developed for android to aid in the researc
 ## DEVELOPERS:
 | Name  | Role |
 | ------------- | ------------- |
-| Mathew James Muyco  |   |
-| James Luis Blanco  |   |
-| Danica Garcia  |   |
-| Dominique Libardo  |   |
+| Mathew James Muyco  | Project Manager |
+| James Luis Blanco  | Team Leader |
+| Danica Garcia  | UI/UX Designer |
+| Dominique Libardo  | Developer |
 
-last edited: May 3, 2022
+last edited: August 1, 2022
